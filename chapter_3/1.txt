@@ -1,0 +1,47 @@
+3.1-1
+-----
+Let f(n) + g(n) be asymptotically nonnegative functions. Using the basic definition of θ-notation, prove that max(f(n), g(n)) = θ(f(n) + g(n)).
+
+Proof:
+Using the basic definition of θ-notation, we need to find c1, c2 > 0, such that
+    0 <= c1(f(n) + g(n)) <= max(f(n), g(n)) <= c2(f(n) + g(n)).
+
+As  f(n) + g(n) <= max(f(n), g(n)),   |
+                                      |  => 0 <= 1/2(f(n) + g(n)) <= max(f(n), g(n)) <= f(n) + g(n), ∀ n > n0.
+    f(n) + g(n) >= 2max(f(n), g(n))   |
+
+3.1-2
+-----
+Show that for any real constants a and b, where b > 0, (n + a)^b = θ(n^b).
+
+Proof:
+If we expand (n + a)^b according to Binomial theorem (as b > 0), we get
+    (n + a)^b = nC0 * n^b + nC1 * n^(b - 1) * a + ... + nCn * a^n,
+we notice that the biggest term is the first one with the highest degree of polynomial n^b, so it is obviously polynomially tightly bound.
+
+3.1-5
+-----
+Prove theorem:
+    For any two functions f(n) and g(n), we have f(n) = θ(f(n)) iff f(n) = O(g(n)) /\ f(n) = Ω(g(n)).
+
+Proof:
+Let's prove it with contradiction. Suppose, f(n) ≠ Ω(g(n)) => ∄ c : 0 <= cg(n) <= f(n) =>
+    => ∄ c1 : 0 <= c1 * g(n) <= f(n) <= c2 * g(n) => f(n) ≠ θ(f(n)) => we came to contradiction, so the theorem is true.
+
+3.1-6
+-----
+Prove that the running time of an algorithm is θ(g(n)) iff its worst-case
+running time is O(g(n)) and its best-case running time is Ω(g(n)).
+
+Proof:
+If Tw(n) is the worst-case running time and Tb(n) is the best-case running time, we know that,
+    0 <= c1 * g(n) <= Tw(n),  |
+                              | => 0 <= c1 * g(n) <= Tw(n) <= Tb(n) <= c2 * g(n), which is θ(g(n)).
+    0 <= Tb(n) <= c2 * g(n)   |
+
+3.1-7
+-----
+Prove that o(g(n)) ∩ ω(g(n)) is the empty set.
+
+Proof:
+As f(n) = o(g(n)) is like a < b, f(n) = ω(g(n)) is like a > b, where a, b ∈ ℝ => a < b ∩ a > b is empty.

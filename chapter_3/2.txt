@@ -1,0 +1,12 @@
+Prove logn! = θ(nlogn), by first proving that logn! = O(nlogn) and logn! = Ω(nlogn).
+
+Proof:
+1. To prove that logn! = O(nlogn), we need to find c1: 0 <= logn! <= c1 * nlogn.
+    logn! = ∑_{i=1}^{n} logi |
+                             | => logn! <= nlogn => c1 = 1
+    nlogn = ∑_{i=1}^{n} logn |
+
+2. To prove that logn! = Ω(nlogn), we need to find c2: 0 <= c2 * nlogn <= logn!.
+    From 1, we see that nlogn <= ∑_{i=1}^{n} logi iff c2 <= 1 / n => ∃ c2.
+
+1 /\ 2 => logn! = θ(nlogn) (from theorem 3.1).
